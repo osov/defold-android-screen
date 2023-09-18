@@ -6,7 +6,7 @@ import android.app.Activity;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONException;
-
+import android.content.pm.ActivityInfo;
 
 public class ExtensionAndroidScreen {
 
@@ -25,8 +25,11 @@ public class ExtensionAndroidScreen {
     activity.runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        Log.d(TAG, "initialize");
-        sendSimpleMessage(MSG_TYPE_NONE, "init", key);
+        Log.d(TAG, "SetMode:"+key);
+        if (key.equals("portrait"))
+        	activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+     	else
+     		activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
       }
     });
   }
