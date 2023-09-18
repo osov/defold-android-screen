@@ -28,8 +28,10 @@ public class ExtensionAndroidScreen {
         Log.d(TAG, "SetMode:"+key);
         if (key.equals("portrait"))
         	activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
-     	else
+     	else if (key.equals("landscape"))
      		activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+     	else
+     		activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
       }
     });
   }
