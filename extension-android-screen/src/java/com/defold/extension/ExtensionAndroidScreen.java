@@ -17,7 +17,7 @@ public class ExtensionAndroidScreen {
   private Activity activity;
 
 
-  public ExtensionLogCat(Activity mainActivity) {
+  public ExtensionAndroidScreen(Activity mainActivity) {
     activity = mainActivity;
   }
 
